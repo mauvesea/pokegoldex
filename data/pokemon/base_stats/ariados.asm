@@ -11,7 +11,11 @@
 	db 100 ; unknown 1
 	db 15 ; step cycles to hatch
 	db 5 ; unknown 2
-	INCBIN "gfx/pokemon/ariados/front.dimensions"
+IF DEF(_GOLD)
+	INCBIN "gfx/pokemon/ariados/front_gold.dimensions"
+ELIF DEF(_SILVER)
+	INCBIN "gfx/pokemon/ariados/front_silver.dimensions"
+ENDC
 	dw NULL, NULL ; unused (beta front/back pics)
 	db GROWTH_FAST ; growth rate
 	dn EGG_BUG, EGG_BUG ; egg groups
