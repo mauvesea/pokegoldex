@@ -651,4 +651,6 @@ DEF NUM_NONTRAINER_PHONECONTACTS EQU const_value - 1
 	const GRUNTF_4
 	const GRUNTF_5
 
+	trainerclass GOLD_OUTFIT2
+
 DEF NUM_TRAINER_CLASSES EQU __trainer_class__ - 1

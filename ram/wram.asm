@@ -2116,7 +2116,7 @@ wOtherTrainerClass::
 ; BATTLETYPE_* values
 wBattleType:: db
 
-	ds 1
+wPlayerOutfit:: db
 
 wOtherTrainerID::
 ; which trainer of the class that you're fighting

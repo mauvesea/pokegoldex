@@ -69,4 +69,5 @@ TrainerPicPointers::
 	dba_pic BluePic
 	dba_pic OfficerPic
 	dba_pic GruntfPic
+	dba_pic GoldOutfit2Pic
 	assert_table_length NUM_TRAINER_CLASSES

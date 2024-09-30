@@ -3205,3 +3205,5 @@ GruntFGroup:
 	db 18, EKANS,      WRAP, LEER, POISON_STING, BITE
 	db 18, GLOOM,      ABSORB, SWEET_SCENT, STUN_SPORE, SLEEP_POWDER
 	db -1 ; end
+
+GoldOutfit2Group:

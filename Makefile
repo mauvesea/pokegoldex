@@ -280,6 +280,7 @@ gfx/battle_anims/status.2bpp: tools/gfx += --remove-whitespace
 
 gfx/player/chris.2bpp: rgbgfx += --columns
 gfx/player/chris_back.2bpp: rgbgfx += --columns
+gfx/player/chris_back2.2bpp: rgbgfx += --columns
 
 gfx/trainer_card/leaders.2bpp: tools/gfx += --trim-whitespace
 

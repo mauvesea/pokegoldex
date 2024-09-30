@@ -1848,25 +1848,6 @@ GetMaxHP:
 	ld c, a
 	ret
 
-GetHalfHP: ; unreferenced
-	ld hl, wBattleMonHP
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .ok
-	ld hl, wEnemyMonHP
-.ok
-	ld a, [hli]
-	ld b, a
-	ld a, [hli]
-	ld c, a
-	srl b
-	rr c
-	ld a, [hli]
-	ld [wHPBuffer1 + 1], a
-	ld a, [hl]
-	ld [wHPBuffer1], a
-	ret
-
 CheckUserHasEnoughHP:
 	ld hl, wBattleMonHP + 1
 	ldh a, [hBattleTurn]
@@ -6259,16 +6240,6 @@ CheckUnownLetter:
 
 INCLUDE "data/wild/unlocked_unowns.asm"
 
-SwapBattlerLevels: ; unreferenced
-	push bc
-	ld a, [wBattleMonLevel]
-	ld b, a
-	ld a, [wEnemyMonLevel]
-	ld [wBattleMonLevel], a
-	ld a, b
-	ld [wEnemyMonLevel], a
-	pop bc
-	ret
 
 BattleWinSlideInEnemyTrainerFrontpic:
 	xor a
@@ -6619,20 +6590,6 @@ _LoadBattleFontsHPBar:
 _LoadHPBar:
 	callfar LoadHPBar
 	ret
-
-LoadHPExpBarGFX: ; unreferenced
-	ld de, EnemyHPBarBorderGFX
-	ld hl, vTiles2 tile $6c
-	lb bc, BANK(EnemyHPBarBorderGFX), 4
-	call Get1bpp
-	ld de, HPExpBarBorderGFX
-	ld hl, vTiles2 tile $73
-	lb bc, BANK(HPExpBarBorderGFX), 6
-	call Get1bpp
-	ld de, ExpBarGFX
-	ld hl, vTiles2 tile $55
-	lb bc, BANK(ExpBarGFX), 8
-	jp Get2bpp
 
 EmptyBattleTextbox:
 	ld hl, .empty
@@ -8035,10 +7992,6 @@ CheckPayDay:
 	call StdBattleTextbox
 	ret
 
-PlayerPickedUpPayDayMoney: ; unreferenced
-	text_far _PlayerPickedUpPayDayMoney
-	text_end
-
 ShowLinkBattleParticipantsAfterEnd:
 	ld a, [wCurOTMon]
 	ld hl, wOTPartyMon1Status
@@ -8606,6 +8559,13 @@ GetTrainerBackpic:
 ; Load the player character's backpic (6x6) into VRAM starting from vTiles2 tile $31.
 
 ; Special exception for Dude.
+	ld hl, wPlayerOutfit
+	ld a, [hl]
+	cp 0
+	jr z, .OriginalOutfit
+	ld hl, ChrisBackpic2
+	jr .ok
+.OriginalOutfit
 	ld hl, ChrisBackpic
 	ld a, [wBattleType]
 	cp BATTLETYPE_TUTORIAL
@@ -8674,6 +8634,9 @@ CopyBackpic:
 
 ChrisBackpic:
 INCBIN "gfx/player/chris_back.2bpp.lz"
+
+ChrisBackpic2:
+INCBIN "gfx/player/chris_back2.2bpp.lz"
 
 DudeBackpic:
 INCBIN "gfx/battle/dude.2bpp.lz"

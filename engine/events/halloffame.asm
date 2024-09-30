@@ -524,7 +524,16 @@ HOF_AnimatePlayerPic:
 	ld a, " "
 	call ByteFill
 
+	ld hl, wPlayerOutfit
+	ld a, [hl]
+	cp 0
+	jr z, .OriginalOutfit
+	ld hl, ChrisBackpic2
+	jr .ContinueDrawingBackpic
+
+.OriginalOutfit
 	ld hl, ChrisBackpic
+.ContinueDrawingBackpic
 	ld de, vTiles2 tile $31
 	ld b, BANK(ChrisBackpic)
 	ld c, 7 * 7
@@ -553,7 +562,16 @@ HOF_AnimatePlayerPic:
 	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
 	ld a, " "
 	call ByteFill
+
+	ld hl, wPlayerOutfit
+	ld a, [hl]
+	cp 0
+	jr z, .OriginalOutfitFrontpic
+	ld a, GOLD_OUTFIT2
+	jr .ContinueDrawingFrontpic
+.OriginalOutfitFrontpic
 	ld a, CAL
+.ContinueDrawingFrontpic
 	ld [wTrainerClass], a
 	ld de, vTiles2
 	farcall GetTrainerPic

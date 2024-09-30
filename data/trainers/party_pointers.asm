@@ -69,4 +69,5 @@ TrainerGroups:
 	dw BlueGroup
 	dw OfficerGroup
 	dw GruntFGroup
+	dw GoldOutfit2Group
 	assert_table_length NUM_TRAINER_CLASSES

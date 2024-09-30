@@ -631,10 +631,7 @@ NidokingBackpic:     INCBIN "gfx/pokemon/nidoking/back.2bpp.lz"
 PokefanmPic:         INCBIN "gfx/trainers/pokefan_m.2bpp.lz"
 PidgeotFrontpic:     INCBIN "gfx/pokemon/pidgeot/front_silver.2bpp.lz"
 BoarderPic:          INCBIN "gfx/trainers/boarder.2bpp.lz"
-AmpharosFrontpic:    INCBIN "gfx/pokemon/ampharos/front_silver.2bpp.lz"
-MachampBackpic:      INCBIN "gfx/pokemon/machamp/back.2bpp.lz"
-FlareonFrontpic:     INCBIN "gfx/pokemon/flareon/front_silver.2bpp.lz"
-SpinarakFrontpic:    INCBIN "gfx/pokemon/spinarak/front.2bpp.lz"
+
 
 
 SECTION "Pics 14", ROMX
@@ -692,3 +689,11 @@ UnownIBackpic:       INCBIN "gfx/pokemon/unown_i/back.2bpp.lz"
 UnownIFrontpic:      INCBIN "gfx/pokemon/unown_i/front.2bpp.lz"
 UnownRBackpic:       INCBIN "gfx/pokemon/unown_r/back.2bpp.lz"
 UnownRFrontpic:      INCBIN "gfx/pokemon/unown_r/front.2bpp.lz"
+
+
+SECTION "Pics 15", ROMX
+GoldOutfit2Pic:     INCBIN "gfx/trainers/gold_outfit2.2bpp.lz"
+AmpharosFrontpic:    INCBIN "gfx/pokemon/ampharos/front_silver.2bpp.lz"
+MachampBackpic:      INCBIN "gfx/pokemon/machamp/back.2bpp.lz"
+FlareonFrontpic:     INCBIN "gfx/pokemon/flareon/front_silver.2bpp.lz"
+SpinarakFrontpic:    INCBIN "gfx/pokemon/spinarak/front.2bpp.lz"

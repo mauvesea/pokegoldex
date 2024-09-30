@@ -398,4 +398,10 @@ TrainerClassAttributes:
 	dw AI_BASIC | AI_TYPES | AI_OPPORTUNIST | AI_CAUTIOUS | AI_STATUS | AI_RISKY
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
+; Gold Outfit 2
+	db NO_ITEM, NO_ITEM ; items
+	db 25 ; base reward
+	dw AI_BASIC | AI_AGGRESSIVE | AI_STATUS
+	dw CONTEXT_USE | SWITCH_SOMETIMES
+
 	assert_table_length NUM_TRAINER_CLASSES

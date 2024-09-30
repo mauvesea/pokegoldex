@@ -44,10 +44,24 @@ TrainerCard:
 	call ClearTilemap
 	call DisableLCD
 
-	ld hl, ChrisPicAndTrainerCardGFX
+	ld hl, wPlayerOutfit
+	ld a, [hl]
+	cp 0
+	jr z, .OriginalOutfit
+	ld hl, ChrisPicCard2GFX
+	jr .ContinueDrawingPic
+.OriginalOutfit
+	ld hl, ChrisPicCardGFX
+.ContinueDrawingPic
 	ld de, vTiles2
-	ld bc, (35 + 6) tiles
-	ld a, BANK(ChrisPicAndTrainerCardGFX)
+	ld bc, 35 tiles
+	ld a, BANK(ChrisPicCardGFX)
+	call FarCopyBytes
+
+	ld hl, TrainerCardGFX
+	ld de, vTiles2 tile $23
+	ld bc, 6 tiles
+	ld a, BANK(TrainerCardGFX)
 	call FarCopyBytes
 
 	ld hl, CardStatusGFX
@@ -620,8 +634,11 @@ TrainerCard_JohtoBadgesOAM:
 	db $1c,            $20, $24, $20 | (1 << 7)
 	db $1c | (1 << 7), $20, $24, $20 | (1 << 7)
 
-ChrisPicAndTrainerCardGFX:
+ChrisPicCardGFX:
 INCBIN "gfx/trainer_card/chris_card.2bpp"
+ChrisPicCard2GFX:
+INCBIN "gfx/trainer_card/chris_card2.2bpp"
+TrainerCardGFX:
 INCBIN "gfx/trainer_card/trainer_card.2bpp"
 
 CardStatusGFX: INCBIN "gfx/trainer_card/card_status.2bpp"

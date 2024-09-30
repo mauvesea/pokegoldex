@@ -629,10 +629,6 @@ PolitoedFrontpic:    INCBIN "gfx/pokemon/politoed/front_gold.2bpp.lz"
 ElectabuzzFrontpic:  INCBIN "gfx/pokemon/electabuzz/front_gold.2bpp.lz"
 TentacruelFrontpic:  INCBIN "gfx/pokemon/tentacruel/front_gold.2bpp.lz"
 NidokingBackpic:     INCBIN "gfx/pokemon/nidoking/back.2bpp.lz"
-PokefanmPic:         INCBIN "gfx/trainers/pokefan_m.2bpp.lz"
-BoarderPic:          INCBIN "gfx/trainers/boarder.2bpp.lz"
-UrsaringFrontpic:    INCBIN "gfx/pokemon/ursaring/front_gold.2bpp.lz"
-MachampBackpic:      INCBIN "gfx/pokemon/machamp/back.2bpp.lz"
 
 
 SECTION "Pics 14", ROMX
@@ -689,3 +685,11 @@ UnownPBackpic:       INCBIN "gfx/pokemon/unown_p/back.2bpp.lz"
 UnownIFrontpic:      INCBIN "gfx/pokemon/unown_i/front.2bpp.lz"
 UnownRBackpic:       INCBIN "gfx/pokemon/unown_r/back.2bpp.lz"
 UnownRFrontpic:      INCBIN "gfx/pokemon/unown_r/front.2bpp.lz"
+
+
+SECTION "Pics 15", ROMX
+GoldOutfit2Pic:     INCBIN "gfx/trainers/gold_outfit2.2bpp.lz"
+PokefanmPic:         INCBIN "gfx/trainers/pokefan_m.2bpp.lz"
+BoarderPic:          INCBIN "gfx/trainers/boarder.2bpp.lz"
+UrsaringFrontpic:    INCBIN "gfx/pokemon/ursaring/front_gold.2bpp.lz"
+MachampBackpic:      INCBIN "gfx/pokemon/machamp/back.2bpp.lz"

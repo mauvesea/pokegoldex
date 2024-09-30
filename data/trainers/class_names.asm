@@ -67,4 +67,5 @@ TrainerClassNames::
 	li "LEADER"
 	li "OFFICER"
 	li "ROCKET"
+	li "<PKMN> TRAINER"
 	assert_list_length NUM_TRAINER_CLASSES

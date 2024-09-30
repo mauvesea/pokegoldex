@@ -60,7 +60,40 @@ PlayersHouseRadioScript:
 	end
 
 PlayersHouseBookshelfScript:
-	jumpstd PictureBookshelfScript
+	opentext
+	writetext PlayersHouseChangeClothesText
+	yesorno
+	iffalse .finish
+	closetext
+	callasm .swap_clothes
+	special FadeOutToBlack
+	special ReloadSpritesNoPalettes
+	playsound SFX_SAVE
+	pause 60
+	special FadeInFromBlack
+	end
+
+.swap_clothes:
+	ld hl, wPlayerOutfit
+	ld a, [hl]
+	cp 0
+	jr z, .OriginalOutfit
+	ld a, 0
+	ld [wPlayerOutfit], a
+	ret
+.OriginalOutfit
+	ld a, 1
+	ld [wPlayerOutfit], a
+	ret
+
+.finish
+	closetext
+	end
+
+PlayersHouseChangeClothesText:
+	text "Would you like to"
+	line "change clothes?"
+	done
 
 PlayersHousePCScript:
 	opentext
