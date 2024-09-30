@@ -154,14 +154,27 @@ FillTitleScreenPals:
 	lb bc, 7, SCREEN_WIDTH
 	ld a, 1
 	call DrawTitleGraphic
+
 	hlbgcoord 5, 6, vBGMap2
 	lb bc, 1, 10
 	ld a, 3
 	call DrawTitleGraphic
+
 	hlbgcoord 0, 12, vBGMap2
 	ld bc, 5 * BG_MAP_WIDTH
 	ld a, 4
 	call ByteFill
+
+	hlbgcoord 0, 0
+	lb bc, 6, 16
+	ld a, 5
+	call DrawTitleGraphic
+
+	hlbgcoord 16, 0
+	lb bc, 6, 4
+	ld a, 6
+	call DrawTitleGraphic
+
 	ld a, 0
 	ldh [rVBK], a
 	ret
